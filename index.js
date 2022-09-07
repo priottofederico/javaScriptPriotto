@@ -8,7 +8,7 @@
   document.querySelector("#total")
       .innerHTML = "Total de Cuota: " + total;
 }  */
-class amigo{
+/*class amigo{
   constructor(nombre, domicilio, edad, profesion){
     this.nombre = nombre;
     this.domicilio = domicilio;
@@ -24,7 +24,19 @@ amigos.push(new amigo("Lucas", "Rucci", 39, true));
 amigos.push(new amigo("Matias", "Ceres", 28, false));
 amigos.push(new amigo("Cristian", "Ceci", 18, false));
 amigos.push(new amigo("Ignacio", "Balbiano", 42, true));
-console.log(amigos);
+console.log(amigos);*/
+
+function cambio(){
+  var dolar = 320; 
+  var resultado ;   
+  var pesos =parseInt(document.getElementById('pesos').value, 10);
+
+  resultado = pesos / dolar ;
+  document.getElementById('resul').innerHTML= resultado;
+  
+  }
+  
+
 
 
 
