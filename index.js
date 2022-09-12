@@ -1,42 +1,55 @@
-/*function Calculate() {
-  const monto = document.querySelector("#monto").value;
-  const interes = document.querySelector("#interes").value;
-  const mes = document.querySelector("#mes").value;
-  const interest = (monto * (interes * 0.01)) / mes;
-  const total = ((monto / mes) + interest).toFixed(2);
+let passInput = document.getElementById("password");
+let letter = document.getElementById("letter");
+let capital = document.getElementById("capital");
+let number = document.getElementById("number");
+let length = document.getElementById("length");
 
-  document.querySelector("#total")
-      .innerHTML = "Total de Cuota: " + total;
-}  */
-/*class amigo{
-  constructor(nombre, domicilio, edad, profesion){
-    this.nombre = nombre;
-    this.domicilio = domicilio;
-    this.edad = edad;
-    this.profesion = profesion;
+
+passInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+passInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+
+passInput.onkeyup = function() {
+  let lowerCaseLetters = /[a-z]/g;
+  if(passInput.value.match(lowerCaseLetters)) {
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+
+  let upperCaseLetters = /[A-Z]/g;
+  if(passInput.value.match(upperCaseLetters)) {
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  let numbers = /[0-9]/g;
+  if(passInput.value.match(numbers)) {
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+  if(passInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
   }
 }
-const amigos = [];
-amigos.push(new amigo("Gabriel", "Primera Junta", 36, true));
-amigos.push(new amigo("Franco", "Gurruchaga", 30, false));
-amigos.push(new amigo("Bruno", "Solano", 40, true));
-amigos.push(new amigo("Lucas", "Rucci", 39, true));
-amigos.push(new amigo("Matias", "Ceres", 28, false));
-amigos.push(new amigo("Cristian", "Ceci", 18, false));
-amigos.push(new amigo("Ignacio", "Balbiano", 42, true));
-console.log(amigos);*/
-
-function cambio(){
-  var dolar = 320; 
-  var resultado ;   
-  var pesos =parseInt(document.getElementById('pesos').value, 10);
-
-  resultado = pesos / dolar ;
-  document.getElementById('resul').innerHTML= resultado;
-  
-  }
-  
-
 
 
 
