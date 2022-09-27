@@ -193,3 +193,356 @@ table tfoot {
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
+/*Intro CSS*/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    }
+.intro {
+    color: #cccccc;
+    line-height: 1;
+    position: relative;
+    display: block;
+    white-space: nowrap;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 48px;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:after{
+        content: 'International Blue Bank';
+        position: absolute;
+        left: 0;
+        top: 0;
+        line-height: 1;
+        display: block;
+        background-color: black;
+        color: white;
+        color: #4badd8;
+        width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        transition: 1s ease-out width;
+    }
+    &:hover:after {
+        width: 100%;
+    }
+    }
+/*Fin Intro CSS*/
+
+/*Navbar*/
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 15px; }
+.header-area {
+    background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)),
+    url(./images/bank.jpg);
+    background-position: center center;
+    background-size: cover; }
+  /* default css end */  
+  /* navbar regular css start */
+.navbar-area {
+    background: rgba(0,0,0,.6);
+    border-bottom: 1px solid #000;
+}
+.site-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+a.site-logo {
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+}
+.site-navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+.site-navbar ul li a {
+    color: #fff;
+    padding: 20px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.site-navbar ul li a:hover {
+    background: rgba(255,255,255,.1);
+}
+  /* navbar regular css end */
+
+  /* nav-toggler css start */
+.nav-toggler {
+    border: 3px solid #fff;
+    padding: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    height: 39px;
+    display: none;
+}
+.nav-toggler span, 
+.nav-toggler span:before, 
+.nav-toggler span:after {
+    width: 28px;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+    transition: .3s;
+}
+.nav-toggler span:before {
+    content: '';
+    transform: translateY(-9px);
+}
+.nav-toggler span:after {
+    content: '';
+    transform: translateY(6px);
+}
+.nav-toggler.toggler-open span {
+    background-color: transparent;
+}
+.nav-toggler.toggler-open span:before {
+    transform: translateY(0px) rotate(45deg);
+}
+.nav-toggler.toggler-open span:after {
+    transform: translateY(-3px) rotate(-45deg);
+}
+  /* nav-toggler css start */
+
+  /* intro-area css start */
+.intro-area {
+    height: calc(100vh - 61px);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+.intro-area h2 {
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 50px;
+    margin-bottom: 25px;
+}
+.intro-area p {
+    font-size: 18px;
+}
+  /* intro-area css end */
+
+  /* mobile breakpoint start */
+@media screen and (max-width: 767px) {
+    .container {
+    max-width: 720px;
+    }
+    /* navbar css for mobile start */
+    .nav-toggler{
+    display: block;
+    }
+    .site-navbar {
+    min-height: 60px;
+    }
+    .site-navbar ul {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 60px);
+    left: 0;
+    top: 60px;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid #444;
+    background-color: rgba(0,0,0,.75);
+    max-height: 0;
+    overflow: hidden;
+    transition: .3s;
+    }
+    .site-navbar ul li {
+    width: 100%;
+    text-align: center;
+    }
+    .site-navbar ul li a {
+    padding: 25px;
+    }
+    .site-navbar ul li a:hover {
+    background-color: rgba(255,255,255,.1);
+    }
+    .site-navbar ul.open {
+    max-height: 100vh;
+    overflow: visible;
+    }
+    .intro-area h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    }  
+    /* navbar css for mobile end */
+}
+  /* mobile breakpoint end */
+
+/*Form*/
+
+#feedback-page{
+	text-align:center;
+}
+
+#form-main{
+	width:100%;
+	float:left;
+	padding-top:0px;
+}
+
+#form-div {
+	background-color:rgba(72,72,72,0.4);
+	padding-left:35px;
+	padding-right:35px;
+	padding-top:35px;
+	padding-bottom:50px;
+	width: 450px;
+	float: left;
+	left: 50%;
+	position: absolute;
+    margin-top:30px;
+	margin-left: -260px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+
+.feedback-input {
+	color:#3c3c3c;
+	font-family: Helvetica, Arial, sans-serif;
+    font-weight:500;
+	font-size: 18px;
+	border-radius: 0;
+	line-height: 22px;
+	background-color: #fbfbfb;
+	padding: 13px 13px 13px 54px;
+	margin-bottom: 10px;
+	width:100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+    border: 3px solid rgba(0,0,0,0);
+}
+
+.feedback-input:focus{
+	background: #fff;
+	box-shadow: 0;
+	border: 3px solid #3498db;
+	color: #3498db;
+	outline: none;
+    padding: 13px 13px 13px 54px;
+}
+
+.focused{
+	color:#30aed6;
+	border:#30aed6 solid 3px;
+}
+
+/* Icons ---------------------------------- */
+#name{
+	background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+#name:focus{
+	background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+	background-size: 30px 30px;
+	background-position: 8px 5px;
+    background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+#email{
+	background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+#email:focus{
+	background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+	background-size: 30px 30px;
+    background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+#comment{
+	background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+	background-color:white;
+}
+
+#button-blue{
+	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+	float:left;
+	width: 100%;
+	border: #fbfbfb solid 4px;
+	cursor:pointer;
+	background-color: #3498db;
+	color:white;
+	font-size:24px;
+	padding-top:22px;
+	padding-bottom:22px;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+
+#button-blue:hover{
+	background-color: rgba(0,0,0,0);
+	color: #0493bd;
+}
+	
+.submit:hover {
+	color: #3498db;
+}
+	
+.ease {
+	width: 0px;
+	height: 74px;
+	background-color: #fbfbfb;
+	-webkit-transition: .3s ease;
+	-moz-transition: .3s ease;
+	-o-transition: .3s ease;
+	-ms-transition: .3s ease;
+	transition: .3s ease;
+}
+
+.submit:hover .ease{
+  width:100%;
+  background-color:white;
+}
+
+@media only screen and (max-width: 580px) {
+	#form-div{
+		left: 3%;
+		margin-right: 3%;
+		width: 88%;
+		margin-left: 0;
+		padding-left: 3%;
+		padding-right: 3%;
+	}
+}

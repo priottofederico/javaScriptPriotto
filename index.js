@@ -7,7 +7,7 @@ const dinero = new Intl.NumberFormat('es-MX', {
   currency: 'MXN'
 })
 
-var establecerDatos = function () {
+let establecerDatos = function () {
   primerInteres = 0, primerImpuesto = 0, primerCapital = 0, primerInsoluto = 0, primerFechaPago = true
   acumIntereses = 0, acumImpuestos = 0, acumCapital = 0
 
@@ -127,12 +127,12 @@ function simularPrestamo () {
 
   var columnas = [ 'No.', 'Fecha', 'Mensualidad', 'Intereses', 'Impuestos', 'Capital', 'Insoluto' ]
 
-  var amortizaciones = document.getElementById('amortizaciones')
-  var tabla = document.createElement('table')
-  var cabeceraTabla = document.createElement('thead')
-  var cuerpoTabla = document.createElement('tbody')
-  var pieTabla = document.createElement('tfoot')
-  var fila = document.createElement('tr')
+  let amortizaciones = document.getElementById('amortizaciones')
+  let tabla = document.createElement('table')
+  let cabeceraTabla = document.createElement('thead')
+  let cuerpoTabla = document.createElement('tbody')
+  let pieTabla = document.createElement('tfoot')
+  let fila = document.createElement('tr')
 
   // Header de tabla
   for ( let j = 0; j < columnas.length; j++ ) {
@@ -151,7 +151,7 @@ function simularPrestamo () {
     acumImpuestos += impuestos
     acumCapital += capital
 
-    var fila = document.createElement('tr')
+    let fila = document.createElement('tr')
     for ( let j = 0; j < columnas.length; j++ ) {
       let celda = document.createElement('td')
       let texto
@@ -194,7 +194,7 @@ function simularPrestamo () {
           texto = null
           break
       }
-      var textoCelda = document.createTextNode(texto)
+      let textoCelda = document.createTextNode(texto)
       celda.appendChild(textoCelda)
       fila.appendChild(celda)
     }
@@ -231,4 +231,33 @@ function simularPrestamo () {
   tabla.appendChild(cuerpoTabla)
   tabla.appendChild(pieTabla)
   amortizaciones.appendChild(tabla)
+}
+//Navbar//
+// define all UI variable
+const navToggler = document.querySelector('.nav-toggler');
+const navMenu = document.querySelector('.site-navbar ul');
+const navLinks = document.querySelectorAll('.site-navbar a');
+
+// load all event listners
+allEventListners();
+
+// functions of all event listners
+function allEventListners() {
+  // toggler icon click event
+  navToggler.addEventListener('click', togglerClick);
+  // nav links click event
+  navLinks.forEach( elem => elem.addEventListener('click', navLinkClick));
+}
+
+// togglerClick function
+function togglerClick() {
+  navToggler.classList.toggle('toggler-open');
+  navMenu.classList.toggle('open');
+}
+
+// navLinkClick function
+function navLinkClick() {
+  if(navMenu.classList.contains('open')) {
+    navToggler.click();
+  }
 }
