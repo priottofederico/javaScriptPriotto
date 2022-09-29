@@ -507,8 +507,8 @@ input:focus, textarea:focus {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
-  margin-top:-4px;
-  font-weight:700;
+    margin-top:-4px;
+    font-weight:700;
 }
 
 #button-blue:hover{
@@ -532,8 +532,8 @@ input:focus, textarea:focus {
 }
 
 .submit:hover .ease{
-  width:100%;
-  background-color:white;
+    width:100%;
+    background-color:white;
 }
 
 @media only screen and (max-width: 580px) {

@@ -261,3 +261,18 @@ function navLinkClick() {
     navToggler.click();
   }
 }
+
+//Sweat Alert//
+let intro = document.getElementsByClassName("intro");
+intro.addEventListener("click", () => {
+  Swal.fire({
+    intro: 'Custom animation with Animate.css',
+    showClass: {
+      popup: 'animate__animated animate__fadeInDown'
+    },
+    hideClass: {
+      popup: 'animate__animated animate__fadeOutUp'
+    }
+  });
+});
+
