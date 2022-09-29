@@ -266,13 +266,13 @@ function navLinkClick() {
 let intro = document.getElementsByClassName("intro");
 intro.addEventListener("click", () => {
   Swal.fire({
-    intro: 'Custom animation with Animate.css',
+    intro: 'Bienvenidos a International Bank',
     showClass: {
       popup: 'animate__animated animate__fadeInDown'
     },
     hideClass: {
       popup: 'animate__animated animate__fadeOutUp'
     }
-  });
-});
+  })
+})
 
