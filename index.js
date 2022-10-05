@@ -266,7 +266,7 @@ function navLinkClick() {
 let intro = document.getElementsByClassName("intro");
 intro.addEventListener("click", () => {
   Swal.fire({
-    intro: 'Bienvenidos a International Bank',
+    title : 'Bienvenidos a International Bank',
     showClass: {
       popup: 'animate__animated animate__fadeInDown'
     },
@@ -275,4 +275,18 @@ intro.addEventListener("click", () => {
     }
   })
 })
+
+//form
+function SendMail(){
+  let params = {
+      from_name : document.getElementById("fullName").value,
+      email_id : document.getElementById("email_id").value,
+      message : document.getElementById("message").value
+  }
+  emailjs.send("service_vfxoxum", "template_p7e2nfq", params).then(function(res){
+      alert("Gracias por tu mensaje" + res.status);
+  })
+}
+// Sweat Alert Form que quiero utilizar en la linea 287
+Swal.fire('Any fool can use a computer')
 
