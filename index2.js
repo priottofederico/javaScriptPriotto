@@ -1,16 +1,18 @@
+const inputs = document.querySelectorAll(".input");
 
-/*let intro = document.getElementsByClassName('intro');
-intro[0].addEventListener('click', () => {
-    Swal.fire({
-        title: 'Bienvenidos a International Bank',
-        showClass: {
-            popup: 'animate__animated animate__fadeInDown'
-        },
-        hideClass: {
-            popup: 'animate__animated animate__fadeOutUp'
-        },
-        function(){
-            window.location.href = "./pages/home.html";
-            }
-    });
-});*/
+function focusFunc(){
+    let parent = this.parentNode.parentNode;
+    parent.classList.add(`focus`);
+}
+
+function blurFunc(){
+    let parent = this.parentNode.parentNode;
+    if(this.value == ""){
+        parent.classList.remove(`focus`);
+    }
+}
+
+inputs.forEach(input => {
+    input.addEventListener(`focus`, focusFunc);
+    input.addEventListener(`blur`, blurFunc);
+});

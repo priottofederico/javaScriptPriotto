@@ -263,17 +263,13 @@ function navLinkClick() {
 }
 
 //Sweat Alert//
-let intro = document.getElementsByClassName("intro");
-intro.addEventListener("click", () => {
-  Swal.fire({
-    title : 'Bienvenidos a International Bank',
-    showClass: {
-      popup: 'animate__animated animate__fadeInDown'
-    },
-    hideClass: {
-      popup: 'animate__animated animate__fadeOutUp'
-    }
-  })
+let boton = document.getElementById("button-blue");
+boton.addEventListener("click", () => {
+  Swal.fire(
+    'Mensaje enviado!',
+    'Muchas Gracias!',
+    'Felicidades'
+  )
 })
 
 //form
